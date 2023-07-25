@@ -1,6 +1,7 @@
-package org.example5.beans;
+package org.example6.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -10,8 +11,14 @@ public class Person {
 //    @Autowired
     private Vehicle vehicle;
 
+//    @Autowired
+//    public Person(Vehicle vehicle1) {
+//        System.out.println("Person created");
+//        this.vehicle = vehicle1;
+//    }
+
     @Autowired
-    public Person(Vehicle vehicle) {
+    public Person(@Qualifier("vehicle1") Vehicle vehicle) {
         System.out.println("Person created");
         this.vehicle = vehicle;
     }
